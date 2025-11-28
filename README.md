@@ -16,19 +16,3 @@ Convert MD simulation frames into **universal graphs** compatible with **both Eq
 | **Non-covalent Edges** | ✅ KD-tree optimized interfaces 
 | **Google Colab Ready** | ✅ One-click running 
 
-## Key Features
-
-### **Dual GNN Compatibility**
-```python
-# Same graphs work with BOTH architectures:
-from graph_creation_fodilazzaz import run_equiformerv2_pipeline
-
-graphs = run_equiformerv2_pipeline(...)
-
-# Use with EquiformerV2 (equivariant)
-from equiformer_v2 import EquiformerV2
-model = EquiformerV2()
-
-# Use with Classic GNNs (GCN, GAT, GraphSAGE)  
-from torch_geometric.nn import GCNConv
-model = GCNConv(13, 64)
