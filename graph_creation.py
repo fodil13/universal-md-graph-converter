@@ -83,12 +83,12 @@ def parse_psf_charges_masses(psf_filename):
                             print(f"   ✅ Sample: {key} → charge={charge_val:.3f}, mass={mass_val:.1f}")
 
                     except ValueError as e:
-                        print(f"   ⚠️ Could not parse charge/mass for {key}: {charge_str}, {mass_str}")
+                        print(f"    Could not parse charge/mass for {key}: {charge_str}, {mass_str}")
                         continue
 
                 else:
                     if atoms_parsed == 0:  # Only show this warning if we haven't parsed any atoms yet
-                        print(f"   ⚠️ Skipping line with only {len(parts)} columns")
+                        print(f"    Skipping line with only {len(parts)} columns")
 
         print(f"✅ PSF parsed: {atoms_parsed} atom charges/masses")
 
@@ -296,13 +296,13 @@ def create_non_covalent_edges(positions, segids, max_distance=6.0):
     non_covalent_edges = []
     positions_np = np.array(positions)
 
-    # Track edges by pair type - FIXED: PROD → PROB
+    # This section depends on the "segid" contained in your system
     pair_counts = {
-        'PROA_GLIZ': 0, 'GLIZ_PROA': 0,
-        'PROB_GLIZ': 0, 'GLIZ_PROB': 0,  # CHANGED: PROD → PROB
-        'PROA_PROB': 0, 'PROB_PROA': 0,  # CHANGED: PROD → PROB
+        'PROA_GLIZ': 0, 'GLIZ_PROA': 0, 
+        'PROB_GLIZ': 0, 'GLIZ_PROB': 0,  
+        'PROA_PROB': 0, 'PROB_PROA': 0,  
         'PROA_GLIP': 0, 'GLIP_PROA': 0,
-        'PROB_GLIP': 0, 'GLIP_PROB': 0,  # CHANGED: PROD → PROB
+        'PROB_GLIP': 0, 'GLIP_PROB': 0,  
         'GLIP_GLIZ': 0, 'GLIZ_GLIP': 0,
         'OTHER': 0
     }
@@ -497,12 +497,12 @@ def create_equiformerv2_graph_from_frame(frame_idx, universe, psf_charges, psf_m
     charge_min = min(charge_values)
     charge_max = max(charge_values)
     charge_mean = sum(charge_values) / len(charge_values)
-    print(f"    ⚡ Charges: {charge_min:.3f} to {charge_max:.3f} (mean: {charge_mean:.3f})")
+    print(f"     Charges: {charge_min:.3f} to {charge_max:.3f} (mean: {charge_mean:.3f})")
 
-    # Create edges (BOTH covalent AND non-covalent) - MODIFIED!
+    # Create edges (BOTH covalent AND non-covalent) 
     edge_index, covalent_pairs = create_edges_with_rbf(atom_positions, valid_psf_bonds, atom_index_to_node_index, all_atom_segids)
 
-    # Create edge features with RBF
+    # Create edge features 
     edge_scalar, edge_vector = create_edge_features(atom_positions, edge_index, covalent_pairs)
 
     # Convert to tensors
@@ -658,3 +658,4 @@ if __name__ == "__main__":
         num_frames=1, #total frame you want to convert into graphs
         frame_step=1 #frames you want to skip
     )
+
