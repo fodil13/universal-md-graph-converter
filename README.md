@@ -33,15 +33,15 @@ Node Features (13 Dimensions)
 
 Edge Features
 
-. Radial basis functions (16D distance encoding)
-. Covalent bond identificaiton
-. Non-covalent interactions (KD-tree optimized)
-. Normalized direction vectors (for equivariant networks)
+- Radial basis functions (16D distance encoding)
+- Covalent bond identificaiton
+- Non-covalent interactions (KD-tree optimized)
+- Normalized direction vectors (for equivariant networks)
 
 Research Applications
-. Protein-protein interaction analysis from MD trajectories
-. Ligand binding site prediction with graph neural networks
-. Molecular interface studies with chemical feature encoding
+- Protein-protein interaction analysis from MD trajectories
+- Ligand binding site prediction with graph neural networks
+- Molecular interface studies with chemical feature encoding
 
 License
 Academic Use - © 2025 Fodil Azzaz
