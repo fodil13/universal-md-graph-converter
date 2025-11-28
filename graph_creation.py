@@ -1,7 +1,7 @@
 # @title Graph creation code, convert frame from molecular dynamics simulation into Graphs readable - Created by Fodil Azzaz, PhD
 
 """
-🔬 EquiformerV2 Molecular Dynamics Graph Converter
+ Molecular Dynamics Graph Converter
 Copyright (c) 2025 Fodil Azzaz - All Rights Reserved
 Non-commercial use only
 
@@ -658,4 +658,5 @@ if __name__ == "__main__":
         num_frames=1, #total frame you want to convert into graphs
         frame_step=1 #frames you want to skip
     )
+
 
