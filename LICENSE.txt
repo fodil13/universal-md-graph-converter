@@ -6,7 +6,6 @@ ACADEMIC LICENSE
 ✅PERMITTED:
 - Academic research and teaching
 - Non-commercial scientific use
-- Modification and distribution with attribution
 - Integration into research pipelines
 - Publication using this software
 
@@ -21,6 +20,7 @@ If you use this software in your research, please cite:
 
 COMMERCIAL LICENSING:
 For commercial licensing inquiries, contact: azzaz.fodil@gmail.com
+
 
 
 
