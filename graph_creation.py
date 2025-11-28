@@ -30,7 +30,7 @@ warnings.filterwarnings("ignore")
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# === CONSTANTS ===
+# === CONSTANTS === The resnames depends on the force field used (here CHARMM36m)
 LIPID_RESNAMES = ['POPC', 'CHL1', 'ANE5AC', 'CER160', 'BGLC', 'BGAL', 'BGALNA', 'POPE', 'POPS', 'CHOL']
 WATER_RESNAMES = ['TIP3', 'SOL', 'WAT', 'HOH', 'TIP4P']
 AMINO_ACIDS = ['ALA', 'ARG', 'ASN', 'ASP', 'CYS', 'GLN', 'GLU', 'GLY', 'HIS', 'ILE',
@@ -658,6 +658,7 @@ if __name__ == "__main__":
         num_frames=1, #total frame you want to convert into graphs
         frame_step=1 #frames you want to skip
     )
+
 
 
 
