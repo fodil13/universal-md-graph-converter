@@ -54,4 +54,7 @@ Built with the following open-source tools:
 
 - MDAnalysis 
 - PyTorch Geometric
+
+Run and tested on:
+- Google Colab (cloud platform, free to use) 
   
