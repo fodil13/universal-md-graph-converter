@@ -30,7 +30,7 @@ warnings.filterwarnings("ignore")
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# === CONSTANTS === The resnames depends on the force field used (here CHARMM36m)
+# === CONSTANTS === The resnames depends on the force field used (here CHARMM36m, you will have to update it according to your system)
 LIPID_RESNAMES = ['POPC', 'CHL1', 'ANE5AC', 'CER160', 'BGLC', 'BGAL', 'BGALNA', 'POPE', 'POPS', 'CHOL']
 WATER_RESNAMES = ['TIP3', 'SOL', 'WAT', 'HOH', 'TIP4P']
 AMINO_ACIDS = ['ALA', 'ARG', 'ASN', 'ASP', 'CYS', 'GLN', 'GLU', 'GLY', 'HIS', 'ILE',
@@ -653,11 +653,12 @@ if __name__ == "__main__":
     graphs = run_equiformerv2_pipeline(
         psf_filename=PSF_FILENAME,
         dcd_filename=DCD_FILENAME,
-        protein_selection='(segid PROA and resid 1150:1280) or (segid PROB and resid 30:85)', #The protein(s) you want to target
-        environment_selection='segid GLIZ',  # Your specific environment
-        num_frames=1, #total frame you want to convert into graphs
-        frame_step=1 #frames you want to skip
+        protein_selection='', #The protein(s) you want to target e.g: 'segid PROA'
+        environment_selection='',  # Your specific environment e.g: 'segid CHL1'
+        num_frames=, #total frame you want to convert into graphs
+        frame_step= #frames you want to skip
     )
+
 
 
 
